@@ -1,0 +1,254 @@
+:root {
+  --accent: #ff6b00;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --page-bg: #fafafa;
+}
+
+/* Page layout */
+.register-page {
+  background: var(--page-bg);
+  width: 100vw;
+  margin: 0;
+  padding: 0; /* vertical padding */
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Make the register section full-bleed across the viewport */
+.register-columns {
+  width: 100vw;
+  max-width: none; /* allow full width */
+  margin: 0; /* remove centering constraint */
+  padding: 0 16px; /* inner horizontal padding */
+  display: grid;
+  /* left hero grows, right form uses larger column to use more horizontal space */
+  grid-template-columns: 1fr 640px;
+  gap: 32px;
+  align-items: stretch;
+}
+
+/* Left hero */
+.register-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-hero {
+  width: 100%;
+  background: linear-gradient(180deg, #fff 0%, #fff 100%);
+  padding: 48px;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(16, 24, 40, 0.04);
+}
+
+.register-hero h1 {
+  color: #111827;
+  font-size: 32px;
+  margin: 0 0 8px 0;
+}
+
+.register-hero p {
+  color: var(--muted);
+  margin: 0 0 20px 0;
+  font-size: 15px;
+}
+
+/* Center hero content so it visually aligns with the form card */
+.register-hero h1,
+.register-hero p,
+.illustration {
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.register-hero {
+  text-align: left;
+}
+
+.illustration {
+  width: 100%;
+  height: 260px;
+  background-image: url("/src/assets/images/hero-illustration.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-size: contain;
+  margin-top: 8px;
+}
+
+/* Right card */
+.register-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  width: 100%;
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+.muted {
+  color: var(--muted);
+}
+
+.register-form .row {
+  margin-bottom: 12px;
+}
+.register-form label {
+  display: block;
+  font-size: 13px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+.register-form .required {
+  color: var(--accent);
+  margin-left: 4px;
+}
+
+.gb-input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #e6e6e6;
+  font-size: 14px;
+  color: #111827;
+}
+
+.row.two {
+  display: flex;
+  gap: 12px;
+}
+.row.two > div {
+  flex: 1;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+}
+.gb-btn {
+  border: 1px solid transparent;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.gb-btn.primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.text-red-600 {
+  color: #dc2626;
+  margin-top: 6px;
+}
+.text-green-600 {
+  color: #16a34a;
+  margin-top: 6px;
+}
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .register-columns {
+    grid-template-columns: 1fr;
+  }
+  .illustration {
+    height: 220px;
+    background-position: center;
+  }
+  .register-hero {
+    padding: 30px;
+    margin-bottom: 12px;
+  }
+  .register-card {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .register-hero h1 {
+    font-size: 24px;
+  }
+  .register-hero p {
+    font-size: 14px;
+  }
+  .illustration {
+    height: 160px;
+  }
+  .row.two {
+    flex-direction: column;
+  }
+}
+
+/* Modal / popover styles for register success */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+.modal-card {
+  width: 420px;
+  max-width: calc(100% - 40px);
+  background: #fff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 12px 40px rgba(2, 6, 23, 0.25);
+}
+.modal-icon {
+  margin: -48px auto 8px auto;
+  width: 96px;
+  height: 96px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.modal-title {
+  font-size: 20px;
+  margin: 6px 0 8px 0;
+  color: #0f172a;
+}
+.modal-message {
+  color: #374151;
+  font-size: 14px;
+  margin: 0 0 12px 0;
+}
+.confirm-link {
+  margin-bottom: 12px;
+}
+.verify-link {
+  color: #2563eb;
+  text-decoration: underline;
+}
+.modal-actions {
+  display: flex;
+  justify-content: center;
+}
+.ok-btn {
+  background: #16a34a;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+}

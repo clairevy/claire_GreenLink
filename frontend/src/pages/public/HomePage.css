@@ -1,0 +1,512 @@
+/* Clean responsive styles for HomePage */
+:root {
+  --green-500: #0b8a4a;
+  --green-700: #06703b;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+}
+
+.gb-container {
+  width: 100%; /* allow full-bleed sections */
+  margin: 0;
+  padding: 0;
+  color: #102a2a;
+}
+
+/* Constrain inner content for non-hero sections */
+.gb-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.gb-hero {
+  min-height: 78vh; /* full viewport hero */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background: linear-gradient(180deg, #ffffff 0%, #f6fbf7 100%); */
+  background-image: url("https://images.pexels.com/photos/17765496/pexels-photo-17765496.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.gb-hero-inner {
+  max-width: 920px;
+  text-align: center;
+}
+.gb-hero-kicker {
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+.gb-hero-title {
+  font-size: 3.9rem;
+  line-height: 1.2;
+  margin: 0 0 12px 0;
+  color: #ffffff;
+  font-weight: 600;
+  width: 100%;
+
+  /* Làm chữ nổi bật */
+  text-shadow: 3px 2px 6px rgba(0, 0, 0, 0.7), 0 0 10px rgba(192, 248, 189, 0.2);
+}
+.gb-hero-lead {
+  color: #ffffff;
+  max-width: 760px;
+  margin: 0 auto 20px auto;
+
+  text-shadow: 3px 2px 6px rgba(0, 0, 0, 0.7), 0 0 10px rgba(192, 248, 189, 0.2); /* bo góc nếu muốn */
+}
+
+.gb-hero-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.gb-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.gb-btn-primary {
+  background: #ffffff;
+  color: #369f26;
+  font-weight: 500;
+}
+.gb-btn-ghost {
+  background: transparent;
+  border: 1px solid var(--green-500);
+  color: var(--green-700);
+}
+.gb-btn-outline {
+  background: transparent;
+  border: 1px solid #e5e7eb;
+  padding: 8px 12px;
+  color: var(--green-700);
+  transition: all 0.2s ease;
+}
+.gb-btn-outline:hover {
+  background: var(--green-300);
+  color: rgb(172, 247, 69);
+  border-color: var(--green-300);
+}
+
+.gb-feature-strip {
+  margin: 28px 0;
+  padding: 18px;
+
+  color: #21571c;
+  text-align: center;
+}
+.gb-feature p {
+  margin: 0 auto;
+  font-size: 1.3rem;
+  width: 60%;
+  padding-top: 15px;
+}
+.gb-feature h1 {
+  margin: 0;
+  font-size: 3.5rem;
+  font-weight: 700;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.gb-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin: 28px 0;
+  margin: 0 auto;
+}
+.gb-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(16, 40, 40, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.gb-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(16, 40, 40, 0.15);
+}
+.gb-card-media {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.gb-card:hover .gb-card-media {
+  transform: scale(1.1);
+}
+.gb-card-title {
+  margin: 0 0 6px 0;
+}
+.gb-card-sub {
+  margin: 0 0 14px;
+  color: var(--muted);
+}
+
+.gb-network {
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* Network / cooperative carousel styles - dark theme matching design */
+.network-section {
+  background-image: url("https://www.biocyclic-vegan.org/wp-content/uploads/2021/01/Green-Queen-Veganic-Farming.png");
+  background-size: cover;
+  background-position: center;
+  height: 700px;
+  padding: 60px 0;
+  color: #ffffff;
+}
+.network-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.network-inner h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  text-align: center;
+}
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.cards-row {
+  display: flex;
+  gap: 16px;
+  align-items: stretch;
+}
+.coop-card {
+  background: #1e2330;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  width: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease;
+}
+.coop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+.coop-media img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+.coop-media {
+  overflow: hidden;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.coop-card {
+  border-radius: 16px;
+}
+.coop-card img {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+.coop-info {
+  padding: 12px 14px 18px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1 1 auto;
+}
+.coop-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+.coop-info .address {
+  margin: 0;
+  color: #9ca3af;
+  font-size: 0.88rem;
+}
+.learn-btn {
+  margin-top: auto;
+  background: #c4f542;
+  color: #0f1419;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+.learn-btn:hover {
+  background: #b3e838;
+}
+.coop-info {
+  padding: 14px;
+}
+.coop-info h3 {
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.nav-btn {
+  background: transparent;
+  border: 1px solid rgba(16, 40, 40, 0.08);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .cards-row {
+    gap: 10px;
+  }
+  .coop-card {
+    width: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel-controls {
+    flex-direction: column;
+  }
+  .cards-row {
+    overflow: auto;
+    padding: 12px 0;
+  }
+  .coop-card {
+    width: 85%;
+    flex: 0 0 auto;
+  }
+}
+
+/* Cooperative profile styles used by CooperativeProfile page */
+.coop-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+  margin-top: 20px;
+}
+.coop-profile-media img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.coop-profile-body {
+  padding: 6px 2px;
+}
+.coop-profile-body h1 {
+  margin-top: 0;
+}
+.coop-address {
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+.coop-products {
+  list-style: disc;
+  padding-left: 18px;
+  margin: 6px 0 12px 0;
+}
+.coop-meta p {
+  margin: 6px 0;
+}
+
+@media (max-width: 800px) {
+  .coop-profile {
+    grid-template-columns: 1fr;
+  }
+  .coop-profile-media img {
+    height: 260px;
+  }
+}
+.gb-section {
+  margin: 28px 0;
+}
+.gb-section-title {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+.gb-section-title1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  margin: 0 auto;
+  width: fit-content;
+  color: #21571c;
+}
+.gb-muted {
+  color: #ffffff;
+}
+
+.gb-featured .gb-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.gb-product {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Agriculture Insights & Tips section */
+.gb-insights {
+  background: #f9fafb;
+  padding: 60px 20px;
+  margin: 0;
+}
+.insights-header {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
+}
+.insights-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f1419;
+  margin: 0 0 12px 0;
+}
+.insights-subtitle {
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0;
+}
+.view-all-btn {
+  background: #c4f542;
+  color: #0f1419;
+  padding: 12px 24px;
+  border-radius: 24px;
+  border: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+.view-all-btn:hover {
+  background: #b3e838;
+  transform: translateY(-2px);
+}
+.insights-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.insight-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.insight-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+.insight-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+.insight-card:hover .insight-image {
+  transform: scale(1.05);
+}
+.insight-content {
+  padding: 20px;
+}
+.insight-date {
+  display: block;
+  color: #9ca3af;
+  font-size: 0.85rem;
+  margin-bottom: 8px;
+}
+.insight-title-text {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #0f1419;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+}
+.insight-desc {
+  color: #6b7280;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .gb-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gb-featured .gb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .insights-header {
+    flex-direction: column;
+  }
+}
+@media (max-width: 600px) {
+  .gb-hero {
+    padding: 36px 10px;
+  }
+  .gb-hero-title {
+    font-size: 1.5rem;
+  }
+  .gb-cards {
+    grid-template-columns: 1fr;
+  }
+  .gb-featured .gb-grid {
+    grid-template-columns: 1fr;
+  }
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+  .insights-title {
+    font-size: 1.5rem;
+  }
+}
