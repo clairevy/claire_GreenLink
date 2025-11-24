@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import "./HomePage.css";
+import apiFetch from "../../utils/api";
 
 const CooperativeProfile = () => {
   const { id } = useParams();
@@ -11,10 +12,9 @@ const CooperativeProfile = () => {
   useEffect(() => {
     const fetchCoop = async () => {
       try {
-        const res = await fetch(`/api/user/public/cooperatives/${id}`);
-        if (!res.ok) throw new Error("Failed to load cooperative");
-        const data = await res.json();
+        const data = await apiFetch(`/user/public/cooperatives/${id}`);
         setCoop(data);
+        setError(null);
       } catch (err) {
         console.error(err);
         setError(err.message);

@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./HomePage.css";
 import { Link } from "react-router-dom";
+import apiFetch from "../../utils/api";
 
 // Cooperative carousel: fetches cooperatives and shows 3 cards, 'Tìm hiểu' links
 const CooperativeCarousel = () => {
   const [coops, setCoops] = useState([]);
   const [index, setIndex] = useState(0);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCoops = async () => {
       try {
-        const res = await fetch("/api/user/public/cooperatives");
-        if (!res.ok) throw new Error("Failed to fetch cooperatives");
-        const data = await res.json();
+        setLoading(true);
+        const data = await apiFetch("/user/public/cooperatives");
         setCoops(data || []);
+        setError(null);
       } catch (err) {
         console.error("Coop fetch error:", err);
+        setError(err.message);
+      } finally {
+        setLoading(false);
       }
     };
     fetchCoops();
@@ -25,8 +31,42 @@ const CooperativeCarousel = () => {
   const prev = () =>
     setIndex((i) => (i - 1 + coops.length) % Math.max(1, coops.length));
 
-  if (!coops.length)
-    return <div className="coop-carousel empty">No cooperatives found</div>;
+  if (loading) {
+    return (
+      <section className="network-section">
+        <div className="network-inner">
+          <h2>MẠNG LƯỚI HTX</h2>
+          <div className="coop-carousel loading">Đang tải...</div>
+        </div>
+      </section>
+    );
+  }
+
+  if (error) {
+    return (
+      <section className="network-section">
+        <div className="network-inner">
+          <h2>MẠNG LƯỚI HTX</h2>
+          <div className="coop-carousel error">
+            Lỗi tải dữ liệu: {error}
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (!coops.length) {
+    return (
+      <section className="network-section">
+        <div className="network-inner">
+          <h2>MẠNG LƯỚI HTX</h2>
+          <div className="coop-carousel empty">
+            Chưa có hợp tác xã. Vui lòng seed data.
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   const visible = coops.slice(index, index + 3);
   if (visible.length < 3) visible.push(...coops.slice(0, 3 - visible.length));
@@ -134,7 +174,7 @@ const HomePage = () => {
         <ProductCard
           title="Dịch vụ Giao nhận Xanh"
           subtitle="Giao nhanh, giữ tươi"
-          image="https://lh3.googleusercontent.com/proxy/_Z5FOO_covATzRj9xVc4Bp-w48fhgRP1HFG_iEwlIqFqIKKFpLv-ZggCvCzZi25OsP-w46Hb7zlIj_uhvwctVk9mBoY"
+          image="https://cdn.vietnambiz.vn/171464876016439296/2020/5/26/dsc993251990419pm-15904799372261869195646.jpg"
         />
       </section>
 
