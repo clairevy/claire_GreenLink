@@ -1,4 +1,5 @@
 import express, { request, response } from "express";
+import mongoose from "mongoose";
 import productRouters from "./routes/productRouters.js";
 import connectDB from "./config/db.js";
 import cors from "cors";
@@ -57,18 +58,27 @@ try {
 
 app.use("/uploads", express.static(uploadsDir));
 
-//connect database
-connectDB();
-
-// Health check endpoint for monitoring
+// Health check endpoint MUST be before connectDB to respond even if DB fails
 app.get("/api/health", (req, res) => {
+  const dbState = mongoose.connection.readyState;
+  const dbStatus = {
+    0: "disconnected",
+    1: "connected",
+    2: "connecting",
+    3: "disconnecting",
+  };
+  
   res.status(200).json({
     status: "ok",
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
     environment: process.env.NODE_ENV || "development",
+    database: dbStatus[dbState] || "unknown",
   });
 });
+
+//connect database (non-blocking)
+connectDB();
 
 app.use("/api/products", productRouters);
 
