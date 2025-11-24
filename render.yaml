@@ -12,12 +12,16 @@ services:
         value: production
       - key: PORT
         value: 5000
-      - key: MONGODB_URI
+      - key: MONGODB_CONNECTION_STRING
         sync: false
-      - key: JWT_SECRET
+      - key: JWT_ACCESS_KEY_SECRET
         generateValue: true
-      - key: JWT_EXPIRES_IN
-        value: 7d
+      - key: JWT_REFRESH_KEY_SECRET
+        generateValue: true
+      - key: EMAIL_USERNAME
+        sync: false
+      - key: EMAIL_PASSWORD
+        sync: false
       - key: FRONTEND_URL
         fromService:
           type: web
