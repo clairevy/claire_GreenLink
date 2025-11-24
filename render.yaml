@@ -22,6 +22,8 @@ services:
         sync: false
       - key: EMAIL_PASSWORD
         sync: false
+      - key: SEED_SECRET
+        generateValue: true
       - key: FRONTEND_URL
         fromService:
           type: web

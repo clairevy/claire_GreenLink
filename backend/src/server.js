@@ -13,6 +13,7 @@ import postRouters from "./routes/postRouters.js";
 import bidRouters from "./routes/bidRouters.js";
 import supplyRouters from "./routes/supplyRouters.js";
 import inventoryRouters from "./routes/inventoryRouters.js";
+import seedRouters from "./routes/seedRouters.js";
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = express();
@@ -89,6 +90,7 @@ app.use("/api/posts", postRouters);
 app.use("/api/bids", bidRouters);
 app.use("/api/supply", supplyRouters);
 app.use("/api/inventory", inventoryRouters);
+app.use("/api/seed", seedRouters);
 // Serve frontend static build (if present) so backend + frontend can run on one port
 const clientDist = path.join(__dirname, "..", "..", "frontend", "dist");
 if (fs.existsSync(clientDist)) {
