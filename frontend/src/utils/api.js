@@ -3,8 +3,10 @@
 //   works with the Vite dev proxy.
 // - Returns parsed JSON on success, throws an Error with a helpful message on failure.
 export default async function apiFetch(path, opts = {}) {
-  const base = import.meta.env.VITE_API_BASE || "/api";
-  const url = path.startsWith("/") ? `${base}${path}` : `${base}/${path}`;
+  const base = import.meta.env.VITE_API_BASE || "";
+  // Production: base = "https://backend.com", path = "/api/users" → "https://backend.com/api/users"
+  // Local dev: base = "", path = "/api/users" → "/api/users" (Vite proxy handles it)
+  const url = base ? `${base}${path}` : path;
 
   const cfg = {
     credentials: "include",

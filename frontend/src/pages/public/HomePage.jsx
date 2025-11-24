@@ -14,7 +14,7 @@ const CooperativeCarousel = () => {
     const fetchCoops = async () => {
       try {
         setLoading(true);
-        const data = await apiFetch("/user/public/cooperatives");
+        const data = await apiFetch("/api/user/public/cooperatives");
         setCoops(data || []);
         setError(null);
       } catch (err) {

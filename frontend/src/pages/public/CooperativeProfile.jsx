@@ -12,7 +12,7 @@ const CooperativeProfile = () => {
   useEffect(() => {
     const fetchCoop = async () => {
       try {
-        const data = await apiFetch(`/user/public/cooperatives/${id}`);
+        const data = await apiFetch(`/api/user/public/cooperatives/${id}`);
         setCoop(data);
         setError(null);
       } catch (err) {

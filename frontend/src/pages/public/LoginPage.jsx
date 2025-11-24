@@ -32,7 +32,7 @@ const LoginPage = () => {
     setError(null);
     try {
       const payload = { username: identifier, password };
-      const data = await apiFetch("/auth/login", {
+      const data = await apiFetch("/api/auth/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
