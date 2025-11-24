@@ -17,8 +17,8 @@ const Header = () => {
 
         <nav className="gb-nav">
           <Link to="/about">VỀ GREENBANANA COOP</Link>
-          <Link to="/products">Sản Phẩm & Dịch Vụ</Link>
-          <Link to="/network">Mạng Lưới HTX</Link>
+          {/* <Link to="/products">Sản Phẩm & Dịch Vụ</Link> */}
+          {/* <Link to="/network">Mạng Lưới HTX</Link> */}
           <Link to="/process">Quy Trình Vàng</Link>
         </nav>
 

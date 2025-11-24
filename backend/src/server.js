@@ -57,6 +57,17 @@ app.use("/uploads", express.static(uploadsDir));
 
 //connect database
 connectDB();
+
+// Health check endpoint for monitoring
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || "development",
+  });
+});
+
 app.use("/api/products", productRouters);
 
 app.use("/api/auth", authRouters);

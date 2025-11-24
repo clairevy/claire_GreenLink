@@ -11,6 +11,7 @@ import LoginPage from "../pages/public/LoginPage.jsx";
 import RegisterPage from "../pages/public/RegisterPage.jsx";
 import TraceabilityPage from "../pages/public/TraceabilityPage";
 import CooperativeProfile from "../pages/public/CooperativeProfile";
+import ProcessPage from "../pages/public/ProcessPage";
 
 // Buyer Pages
 import BuyerLayout from "../layouts/BuyerLayout";
@@ -48,6 +49,7 @@ const AppRouter = () => {
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
           <Route path="cooperatives/:id" element={<CooperativeProfile />} />
+          <Route path="process" element={<ProcessPage />} />
         </Route>
 
         {/* ========== BUYER ROUTES ========== */}

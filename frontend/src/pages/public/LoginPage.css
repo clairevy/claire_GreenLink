@@ -9,7 +9,9 @@
 }
 
 .login-illustration {
-  background: linear-gradient(90deg, #ff6b00 0%, #ff9a4d 100%);
+background-image:url('/src/assets/images/5.jpg');
+background-size: contain;
+background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;

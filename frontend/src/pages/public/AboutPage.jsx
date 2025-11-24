@@ -38,17 +38,17 @@ const teamMembers = [
     image: "https://scontent.fsgn5-6.fna.fbcdn.net/v/t1.15752-9/588624303_2130358421037506_3806247462064241074_n.jpg?stp=dst-jpg_s640x640_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeHWUOpx5XH_tTZdnoEosaMaJKMhd1-hgOUkoyF3X6GA5ePzT6pDMJ3KhLFoiAXzLXctm2g4e6oSidJn3dcUZzwy&_nc_ohc=5EZYkVyRC8wQ7kNvwGE0qWK&_nc_oc=AdlniCav9rkxiSn6uMmXCnr-FmDVA-F_wwRUkMpp6TB9PQHOhboTYkEtgmOs1fHZa84&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn5-6.fna&oh=03_Q7cD3wH2-mYCQGew8kQtJvl8HU02Jgf9wG9CV_gUBRGPFhWINQ&oe=694ACC52",
   },
   {
-    name: "Lê Minh C",
+    name: "Huỳnh Văn Sỹ",
     role: "Thành viên nhóm GreenLink",
-    image: "https://images.pexels.com/photos/2905238/pexels-photo-2905238.jpeg",
+    image: "https://scontent.fsgn5-13.fna.fbcdn.net/v/t1.15752-9/583218929_1243941187589850_7816452047423932944_n.jpg?stp=dst-jpg_s552x414_tt6&_nc_cat=107&ccb=1-7&_nc_sid=0024fc&_nc_eui2=AeGfgCqz8kTmHqEPlgc-lAiVbZR1KaemVZFtlHUpp6ZVkQRQ4UJNGnwrUe7deD60s6rzUP2ZkIMnFpJdEw4QL8qa&_nc_ohc=RKpr0nJzr2kQ7kNvwFnogcS&_nc_oc=AdkwxN1TbbPDiS72EeKI1guiniBgAo3tdW2-FLAR8bAW-ImW7HjtdgoblTC-RIUPBmU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.fsgn5-13.fna&oh=03_Q7cD3wGvq3ILibv1XobAYozF15xuJkNCZhpZ63D3xb9f3WE0vg&oe=694B53DA",
   },
   {
-    name: "Phạm Thị D",
+    name: "Khang Phương",
     role: "Thành viên nhóm GreenLink",
     image: "https://images.pexels.com/photos/2254069/pexels-photo-2254069.jpeg",
   },
   {
-    name: "Hoàng Văn E",
+    name: "Hoàng Văn Minh",
     role: "Thành viên nhóm GreenLink",
     image: "https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg",
   },
@@ -108,10 +108,10 @@ const TestimonialsSection = () => {
       <div className="container">
         <div className="testimonials-quote">
           <p>
-            "Với giải pháp canh tác thông minh của họ, chúng tôi đã tăng năng
-            suất lên 35% đồng thời giảm 40% lượng nước sử dụng. Hệ thống giám
-            sát IoT và phân tích AI đã hoàn toàn thay đổi cách chúng tôi quản lý
-            trang trại."
+          "Green Kink ra đời với sứ mệnh kết nối các hợp tác xã nông nghiệp với
+            người mua, giúp minh bạch chuỗi cung ứng, nâng cao giá trị sản phẩm và
+            thúc đẩy phát triển bền vững. Đây là đội ngũ sáng lập đầy tâm huyết,
+            mong muốn tạo ra sự khác biệt tích cực cho ngành nông nghiệp Việt Nam."
           </p>
         </div>
 
@@ -190,6 +190,21 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
+       <section className="video-section">
+        <div className="container">
+          <h2 className="video-title">Quy trình xử lý và đóng gói lá chuối</h2>
+          <div className="video-container">
+            <iframe
+              src="https://www.youtube.com/embed/cH6TAHOZnnE"
+              title="The Power of Organic Farming"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </div>
+      </section>
+
 
       <section className="about-steps">
         <div className="container">
@@ -214,37 +229,12 @@ const AboutPage = () => {
           </div>
         </div>
       </section>
-      <section className="video-section">
-        <div className="container">
-          <h2 className="video-title">Sức Mạnh Của Nông Nghiệp Hữu Cơ</h2>
-          <div className="video-container">
-            <iframe
-              src="https://www.youtube.com/embed/cH6TAHOZnnE"
-              title="The Power of Organic Farming"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-        </div>
-      </section>
-
+     
       <TestimonialsSection />
 
       
 
-      <section className="about-products container">
-        <h3>Sản Phẩm & Dịch Vụ</h3>
-        <div className="products-grid">
-          {Array.from({ length: 3 }).map((_, i) => (
-            <div className="product-card" key={i}>
-              <div className="product-image" />
-              <h4>Gói dịch vụ {i + 1}</h4>
-              <p>Miêu tả ngắn gọn về gói dịch vụ hoặc sản phẩm nổi bật.</p>
-            </div>
-          ))}
-        </div>
-      </section>
+     
     </div>
   );
 };

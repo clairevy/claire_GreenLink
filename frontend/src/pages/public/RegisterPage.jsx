@@ -206,9 +206,7 @@ const RegisterPage = () => {
       <div className="register-row">
         <div className="register-hero-top">
           <h1>Đăng ký bán hàng chuyên nghiệp</h1>
-          <p>
-            Quản lý đơn hàng và hợp tác mua sỉ hiệu quả với GreenBanana Coop.
-          </p>
+          
           <div className="illustration" aria-hidden="true"></div>
         </div>
 

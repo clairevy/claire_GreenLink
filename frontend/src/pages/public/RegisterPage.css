@@ -131,7 +131,17 @@
 .row.two > div {
   flex: 1;
 }
-
+.register-hero-top h1{
+  margin: 0 auto;
+  width: fit-content;
+ 
+}
+.illustration
+{
+  background-image: url('/frontend/src/assets/images/5.jpg');
+  background-size: cover;
+  background-position: center;
+}
 .actions {
   margin-top: 12px;
   display: flex;

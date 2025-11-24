@@ -23,7 +23,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url("https://images.pexels.com/photos/2132180/pexels-photo-2132180.jpeg");
+  background-image: url("https://vietnam.opendevelopmentmekong.net/wp-content/uploads/sites/6/2020/04/3554229659_70146e680b_o-1-scaled.jpg");
   background-size: cover;
   background-position: center;
   filter: brightness(0.4);
@@ -31,11 +31,8 @@
 .about-hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(10, 31, 26, 0.7) 0%,
-    rgba(6, 78, 59, 0.5) 100%
-  );
+ 
+  
 }
 .about-hero-content {
   position: relative;
