@@ -2,10 +2,10 @@ services:
   # Backend service
   - type: web
     name: greenco-op-backend
-    runtime: node
+    env: node
     region: singapore
     plan: free
-    rootDirectory: backend
+    rootDirectory: ./backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
@@ -29,10 +29,10 @@ services:
   # Frontend static site
   - type: web
     name: greenco-op-frontend
-    runtime: static
+    env: static
     region: singapore
     plan: free
-    rootDirectory: frontend
+    rootDirectory: ./frontend
     buildCommand: npm install && npm run build
     staticPublishPath: ./dist
     routes:
