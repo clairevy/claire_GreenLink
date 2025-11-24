@@ -5,9 +5,8 @@ services:
     env: node
     region: singapore
     plan: free
-    rootDirectory: ./backend
-    buildCommand: npm install
-    startCommand: npm start
+    buildCommand: cd backend && npm install
+    startCommand: cd backend && npm start
     envVars:
       - key: NODE_ENV
         value: production
@@ -32,9 +31,8 @@ services:
     env: static
     region: singapore
     plan: free
-    rootDirectory: ./frontend
-    buildCommand: npm install && npm run build
-    staticPublishPath: ./dist
+    buildCommand: cd frontend && npm install && npm run build
+    staticPublishPath: ./frontend/dist
     routes:
       - type: rewrite
         source: /*
