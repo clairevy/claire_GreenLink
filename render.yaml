@@ -40,8 +40,5 @@ services:
         source: /*
         destination: /index.html
     envVars:
-      - key: VITE_API_URL
-        fromService:
-          type: web
-          name: greenco-op-backend
-          property: host
+      - key: VITE_API_BASE
+        value: https://greenco-op-backend.onrender.com
