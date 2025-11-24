@@ -22,6 +22,7 @@
 ### Option A: Deploy bằng Blueprint (Tự động - Khuyên dùng)
 
 1. Commit và push file `render.yaml` lên GitHub:
+
    ```bash
    git add render.yaml backend/.env.example frontend/.env.example
    git commit -m "Add Render deployment config"
@@ -41,6 +42,7 @@
 1. Vào Render Dashboard > **New** > **Web Service**
 2. Connect GitHub repository `claire_GreenLink`
 3. Cấu hình service:
+
    - **Name**: `greenco-op-backend`
    - **Region**: Singapore
    - **Branch**: main
@@ -51,6 +53,7 @@
    - **Plan**: Free
 
 4. Thêm Environment Variables:
+
    ```
    NODE_ENV=production
    PORT=5000
@@ -69,6 +72,7 @@
 1. Vào Render Dashboard > **New** > **Static Site**
 2. Connect GitHub repository `claire_GreenLink`
 3. Cấu hình:
+
    - **Name**: `greenco-op-frontend`
    - **Branch**: main
    - **Root Directory**: `frontend`
@@ -76,6 +80,7 @@
    - **Publish Directory**: `dist`
 
 4. Thêm Environment Variable:
+
    ```
    VITE_API_URL=https://greenco-op-backend.onrender.com
    ```
@@ -105,6 +110,7 @@ const allowedOrigins = [
 ```
 
 Commit và push lại:
+
 ```bash
 git add backend/src/server.js
 git commit -m "Update CORS for production"
@@ -114,6 +120,7 @@ git push origin main
 ## 🔄 Bước 5: Cập Nhật Environment Variables
 
 ### Backend Environment Variables
+
 ```env
 NODE_ENV=production
 PORT=5000
@@ -124,6 +131,7 @@ FRONTEND_BASE_URL=https://greenco-op-frontend.onrender.com
 ```
 
 ### Frontend Environment Variables (nếu cần)
+
 ```env
 VITE_API_URL=https://greenco-op-backend.onrender.com
 ```
@@ -139,21 +147,25 @@ VITE_API_URL=https://greenco-op-backend.onrender.com
 ## 🐛 Troubleshooting
 
 ### Backend không kết nối được MongoDB
+
 - Kiểm tra MongoDB Atlas whitelist IP: `0.0.0.0/0`
 - Kiểm tra connection string có đúng username/password
 - Kiểm tra database name trong connection string
 
 ### Frontend không call được API
+
 - Kiểm tra `VITE_API_URL` đã đúng chưa
 - Kiểm tra CORS trong backend đã thêm frontend URL
 - Kiểm tra network tab trong browser DevTools
 
 ### Service bị sleep (Free plan)
+
 - Render free plan sẽ sleep sau 15 phút không hoạt động
 - Service sẽ khởi động lại khi có request (mất ~30s)
 - Giải pháp: Upgrade lên paid plan hoặc dùng uptime monitor
 
 ### Build failed
+
 - Kiểm tra logs trong Render dashboard
 - Đảm bảo `package.json` có đầy đủ dependencies
 - Kiểm tra Node version compatibility
@@ -161,6 +173,7 @@ VITE_API_URL=https://greenco-op-backend.onrender.com
 ## 🔄 Auto Deploy
 
 Render tự động deploy lại khi:
+
 - Push code mới lên GitHub branch đã config
 - Thay đổi environment variables
 - Manual deploy trong dashboard
@@ -178,11 +191,11 @@ Render tự động deploy lại khi:
 Tạo health check endpoint trong `backend/src/server.js`:
 
 ```javascript
-app.get('/api/health', (req, res) => {
-  res.status(200).json({ 
-    status: 'ok', 
+app.get("/api/health", (req, res) => {
+  res.status(200).json({
+    status: "ok",
     timestamp: new Date().toISOString(),
-    uptime: process.uptime() 
+    uptime: process.uptime(),
   });
 });
 ```
@@ -197,6 +210,7 @@ app.get('/api/health', (req, res) => {
 ## 📞 Support
 
 Nếu gặp vấn đề, kiểm tra:
+
 1. Render Dashboard > Logs
 2. Browser DevTools > Console
 3. Render Status Page: status.render.com

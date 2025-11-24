@@ -21,9 +21,11 @@ app.use(express.json()); //middleware xu ly json
 const frontendBase = process.env.FRONTEND_BASE_URL || "http://localhost:5173";
 const allowedOrigins = [
   frontendBase,
+  "http://localhost:5173",
   "http://localhost:5174",
   "http://127.0.0.1:5173",
   "http://127.0.0.1:5174",
+  "https://greenco-op-frontend.onrender.com", // Production frontend
 ];
 app.use(
   cors({
